@@ -5,8 +5,8 @@ import ScatterChart from './components/ScatterChart';
 import BubbleChart from './components/BubbleChart';
 
 function App() {
-  const [data, setData] = useState(null);
-  useEffect(() => {
+  const [data, setData] = useState(null); 
+useEffect(() => {
     fetch('/data.json')
       .then((response) => {
         if (!response.ok) {
@@ -17,7 +17,8 @@ function App() {
       .then((jsonData) => setData(jsonData))
       .catch((error) => console.error(error));
   }, []);
-   return (
+
+  return (
     <div>
       <h1>Interactive Dashboard</h1>
       <BarChart months={data.months} sales={data.sales} />
@@ -27,4 +28,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
