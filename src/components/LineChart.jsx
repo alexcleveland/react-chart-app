@@ -7,6 +7,7 @@ const LineChart = ({ months, profits }) => {
       {
         label: 'Monthly Profits',
         data: profits,
+        borderColor: 'rgba(0, 191, 255, 0.8)',
         fill: false,
       },
     ],

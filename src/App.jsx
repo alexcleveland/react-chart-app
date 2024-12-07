@@ -6,19 +6,21 @@ import BubbleChart from './components/BubbleChart';
 
 function App() {
   const [data, setData] = useState(null); 
-useEffect(() => {
+  useEffect(() => {
     fetch('/data.json')
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to fetch data');
+          throw new Error('failed to get data from data.json');
         }
         return response.json();
       })
       .then((jsonData) => setData(jsonData))
       .catch((error) => console.error(error));
   }, []);
-
-  return (
+  if (!data) {
+    return <p>Please wait while loading</p>;
+  }
+return (
     <div>
       <h1>Interactive Dashboard</h1>
       <BarChart months={data.months} sales={data.sales} />
@@ -30,3 +32,4 @@ useEffect(() => {
 }
 
 export default App;
+

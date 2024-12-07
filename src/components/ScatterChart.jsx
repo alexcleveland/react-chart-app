@@ -6,6 +6,7 @@ const ScatterChart = ({ expenses, profits }) => {
       {
         label: 'Expenses vs Profits',
         data: expenses.map((exp, i) => ({ x: exp, y: profits[i] })),
+        backgroundColor: 'rgba(220, 20, 60, 0.7)',
       },
     ],
   };

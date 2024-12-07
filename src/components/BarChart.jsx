@@ -8,7 +8,7 @@ const BarChart = ({ months, sales }) => {
       {
         label: 'Monthly Sales',
         data: sales,
-        
+        backgroundColor: 'rgba(255, 165, 0, 0.6)',
       },
     ],
   };
